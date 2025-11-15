@@ -8,15 +8,15 @@ const crypto = require('crypto');
 const { Buffer } = require('buffer');
 const { exec, execSync } = require('child_process');
 const { WebSocket, createWebSocketStream } = require('ws');
-const UUID = process.env.UUID || '';
+const UUID = process.env.UUID || 'f09bf126-f6e8-49e0-a855-844bbc5ec8aa';
 const NEZHA_SERVER = process.env.NEZHA_SERVER || '';
 const NEZHA_PORT = process.env.NEZHA_PORT || '';
 const NEZHA_KEY = process.env.NEZHA_KEY || '';
-const DOMAIN = process.env.DOMAIN || '';
+const DOMAIN = process.env.DOMAIN || 'zwwhhw-wfwe.hf.space';
 const AUTO_ACCESS = process.env.AUTO_ACCESS || true;
 const WSPATH = process.env.WSPATH || UUID.slice(0, 8);
-const SUB_PATH = process.env.SUB_PATH || '';
-const NAME = process.env.NAME || '';
+const SUB_PATH = process.env.SUB_PATH || 'hug';
+const NAME = process.env.NAME || 'Hug';
 const PORT = process.env.PORT || 7860;
 
 let ISP = '';
@@ -316,21 +316,21 @@ use_gitee_to_upgrade: false
 use_ipv6_country_code: false
 uuid: ${UUID}`;
       
-      fs.writeFileSync('config.yaml', configYaml);
+      fs。writeFileSync('config.yaml'， configYaml);
     }
     command = `setsid nohup ./npm -c config.yaml >/dev/null 2>&1 &`;
   } else {
-    console.log('NEZHA variable is empty, skip running');
+    console。log('NEZHA variable is empty, skip running');
     return;
   }
 
   try {
-    exec(command, { shell: '/bin/bash' }, (err) => {
-      if (err) console.error('npm running error:', err);
-      else console.log('npm is running');
+    exec(command， { shell: '/bin/bash' }， (err) => {
+      if (err) console.error('npm running error:'， err);
+      else console。log('npm is running');
     });
   } catch (error) {
-    console.error(`error: ${error}`);
+    console。error(`error: ${error}`);
   }   
 }; 
 
